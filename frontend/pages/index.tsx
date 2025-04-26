@@ -70,5 +70,5 @@ export default function Home() {
     </div>
   );
 
-  return <main className="min-h-screen bg-gray-100 p-6">{renderContent()}</main>;
+  return <main className="min-h-screen bg-gray-50 flex items-center justify-center p-6">{renderContent()}</main>;
 }

@@ -75,5 +75,19 @@ npm run dev
 Visit [http://localhost:3000](http://localhost:3000) to use the app.
 
 
+## Additional Frontend Setup (Important)
+We are using shadcn/ui, so you need to generate components locally:
+
+Initialize shadcn if not done already:
+
+```bash
+npx shadcn@latest init
+```
+Add required UI components:
+
+```bash
+npx shadcn-ui@latest add card button input
+```
+
 ## Notes
 - TailwindCSS is used for styling.

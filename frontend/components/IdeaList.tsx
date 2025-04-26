@@ -1,3 +1,6 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import React from 'react';
 
 interface IdeaListProps {
@@ -12,26 +15,34 @@ export const IdeaList: React.FC<IdeaListProps> = ({ ideas, selectedIdea, setSele
   if (!ideas.length) return null;
 
   return (
-    <div className="space-y-2">
-      <h2 className="text-lg font-semibold">Pick an idea:</h2>
-      {ideas.map((idea, index) => (
-        <button
-          key={index}
-          onClick={() => setSelectedIdea(idea)}
-          className={`block text-left w-full border rounded px-3 py-2 hover:bg-gray-100 ${
-            selectedIdea === idea ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
-          }`}
-        >
-          {idea}
-        </button>
-      ))}
-      <button
-        onClick={onRefine}
-        className="mt-2 w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 disabled:opacity-50"
-        disabled={!selectedIdea || loading}
-      >
-        {loading ? 'Refining...' : 'Refine Selected Idea'}
-      </button>
-    </div>
+    <Card className="w-full max-w-2xl mx-auto">
+        <CardContent className="p-6 space-y-4">
+            <h2 className="section-title">Pick an idea:</h2>
+
+            <div className="flex flex-col gap-3">
+            {ideas.map((idea, index) => (
+                <Button
+                key={index}
+                  onClick={() => setSelectedIdea(idea)}
+                  className={`idea-button ${
+                      selectedIdea === idea
+                        ? "idea-button-selected"
+                        : "idea-button-default"
+                    }`}
+                >
+                  {idea}
+                </Button>
+            ))}
+            </div>
+
+          <Button
+            onClick={onRefine}
+            className="btn-secondary"
+            disabled={!selectedIdea || loading}
+          >
+            {loading ? 'Refining...' : 'Refine Selected Idea'}
+          </Button>
+      </CardContent>
+    </Card>
   );
 };

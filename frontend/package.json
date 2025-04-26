@@ -9,10 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.0",
     "axios": "^1.6.7",
-    "next": "13.5.4",
+    "class-variance-authority": "^0.7.1",
+    "lucide-react": "^0.503.0",
+    "next": "^15.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "tailwind-variants": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "22.15.2",

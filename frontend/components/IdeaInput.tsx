@@ -1,3 +1,7 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 import React from 'react';
 
 interface IdeaInputProps {
@@ -9,24 +13,28 @@ interface IdeaInputProps {
 
 export const IdeaInput: React.FC<IdeaInputProps> = ({ topic, setTopic, loading, onGenerateIdeas }) => {
   return (
-    <div>
-      <label htmlFor="topic" className="block mb-1 font-medium text-gray-700">
+    <Card className="card">
+      <CardContent className="flex flex-col">
+        <label htmlFor="topic" className="form-label">
         What is your post about?
-      </label>
-      <input
-        id="topic"
-        value={topic}
-        onChange={(e) => setTopic(e.target.value)}
-        className="w-full border border-gray-300 rounded px-3 py-2"
-        placeholder="e.g., benefits of morning walk"
-      />
-      <button
+        </label>
+        <Textarea
+            id="topic"
+            value={topic}
+            onChange={(e) => setTopic(e.target.value)}
+            className="input"
+            placeholder="e.g., benefits of morning walk"
+            disabled={loading}
+            rows={4}
+        />
+      </CardContent>
+      <Button
         onClick={onGenerateIdeas}
-        className="mt-3 w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:opacity-50"
+        className="btn-primary"
         disabled={loading || !topic.trim()}
       >
         {loading ? 'Generating...' : 'Generate Ideas'}
-      </button>
-    </div>
+      </Button>
+    </Card>
   );
 };
