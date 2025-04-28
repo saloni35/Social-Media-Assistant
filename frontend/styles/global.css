@@ -39,15 +39,15 @@ body {
 }
 
 .idea-button {
-  @apply text-left p-4 rounded-lg border transition;
+  @apply h-auto text-left p-4 rounded-lg border transition;
 }
 
 .idea-button-selected {
-  @apply border-blue-600 bg-blue-50;
+  @apply h-auto border-blue-600 bg-blue-50;
 }
 
 .idea-button-default {
-  @apply border-gray-300 hover:bg-gray-50;
+  @apply h-auto border-gray-300 hover:bg-gray-50;
 }
 
 .section-title {

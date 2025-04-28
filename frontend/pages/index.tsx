@@ -4,7 +4,7 @@ import { IdeaInput } from '../components/IdeaInput';
 import { IdeaList } from '../components/IdeaList';
 import { RefinedPost } from '../components/RefinedPost';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'http://127.0.0.1:8000';
 
 export default function Home() {
   const [topic, setTopic] = useState('');
@@ -17,7 +17,7 @@ export default function Home() {
     try {
       setLoading(true);
       resetStates();
-      const response = await axios.post(`${API_BASE_URL}/generate`, { topic });
+      const response = await axios.post(`${API_BASE_URL}/generate`, { idea: topic });
       setIdeas(response.data.ideas);
     } catch (error) {
       console.error('Error generating ideas:', error);

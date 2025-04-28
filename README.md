@@ -1,6 +1,8 @@
 # Social-Media-Assistant
 A web-based tool built with Next.js, FastAPI and Langchain that assists you with posting on social media platforms.
 
+<hr style="border: 0; height: 0.1px; background-color: #ccc;">
+
 ## Project Structure
 
 ```plaintext
@@ -16,6 +18,32 @@ frontend/
  ├── tailwind.config.js
  └── package.json
 ```
+<hr style="border: 0; height: 0.1px; background-color: #ccc;">
+
+# Social Post Assistant - Backend
+
+## Prerequisites
+1. **Install dependencies**
+If you're using pip:
+```
+pip install -r requirements.txt
+```
+
+If you're using Pipenv: 
+```
+pipenv install
+```
+
+2. **Run the app**
+```
+uvicorn app.main:app --reload
+```
+
+## Notes
+- Ensure your backend FastAPI server is reachable at `http://localhost:8000` before running frontend.
+- Make sure CORS is allowed on the backend.
+
+<hr style="border: 0; height: 0.1px; background-color: #ccc;">
 
 # Social Post Assistant - Frontend
 
@@ -91,3 +119,4 @@ npx shadcn-ui@latest add card button input
 
 ## Notes
 - TailwindCSS is used for styling.
+- Backend server (FastAPI) running at `http://localhost:8000`

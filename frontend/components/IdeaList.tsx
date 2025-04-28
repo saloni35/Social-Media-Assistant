@@ -30,7 +30,10 @@ export const IdeaList: React.FC<IdeaListProps> = ({ ideas, selectedIdea, setSele
                         : "idea-button-default"
                     }`}
                 >
-                  {idea}
+                    <div className="flex items-center gap-2 flex-wrap">
+                        <span className="whitespace-normal break-words">{idea}</span>
+                    </div>
+
                 </Button>
             ))}
             </div>

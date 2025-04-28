@@ -5,3 +5,6 @@ node_modules/
 
 #shadcn files
 frontend/components/ui
+
+#Python files
+backend/*/__pycache__/
